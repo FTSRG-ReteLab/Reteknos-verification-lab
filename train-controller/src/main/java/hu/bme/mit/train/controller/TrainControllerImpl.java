@@ -10,7 +10,7 @@ public class TrainControllerImpl implements TrainController {
 	private int step = 0;
 	private int referenceSpeed = 0;
 	private int speedLimit = 0;
-	private TimerTask tt=null;
+	private TimerTask timertask=null;
 	private Timer t=new Timer();
 
 	@Override
@@ -56,12 +56,12 @@ public class TrainControllerImpl implements TrainController {
 	public void setJoystickPosition(int joystickPosition) {
 		this.step = joystickPosition;	
 		if (this.step==0) {
-			if(tt!=null) tt.cancel();
-			if(tt!=null) tt=null;
+			if(timertask!=null) timertask.cancel();
+			if(timertask!=null) timertask=null;
 			return;
 		}
-		if(tt==null) tt= new SpeedSetTask();
-		t.schedule(tt, 1000,1000);
+		if(timertask==null) timertask= new SpeedSetTask();
+		t.schedule(timertask, 1000,1000);
 	}
 
 }
