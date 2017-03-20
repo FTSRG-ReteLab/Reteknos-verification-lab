@@ -10,7 +10,7 @@ public class TrainControllerImpl implements TrainController {
 	private int referenceSpeed = 0;
 	private int speedLimit = 0;
 	private Thread counterThread ;
-	private TrainControllerScheduler scheduler = null;;
+	private TrainControllerScheduler scheduler = null;
 
 	
 	@Override
